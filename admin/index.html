@@ -1,26 +1,27 @@
 <!doctype html>
 <html>
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>لوحة تحكم متجر النظافة</title>
-  
-  <script src="https://unpkg.com/netlify-cms@^2/dist/netlify-cms.js"></script>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>لوحة تحكم متجر النظافة</title>
+    
+    <script src="https://unpkg.com/netlify-cms@^2/dist/netlify-cms.js"></script>
+
+    <script src="https://unpkg.com/@netlify/netlify-cms-oauth@^2/dist/netlify-cms-oauth.js"></script>
+
 </head>
 <body>
     <script>
-        // إخبار Netlify CMS باستخدام التهيئة اليدوية
+        // إخبار CMS بالتهيئة اليدوية واستخدام Auth0 كـ Backend
         CMS.init({
             config: {
-                // التأكد من استخدام المصادقة الصحيحة (التي فعلناها)
                 backend: {
-                    name: 'git-gateway',
-                    branch: 'main',
+                    name: 'auth0', // **تغيير من git-gateway إلى auth0**
+                    // لا نحتاج لإدخال branch أو config_url هنا
                 },
-                // الإشارة لموقع ملف الإعدادات
-                config_url: '/admin/config.yml' 
+                // ... (بقية إعدادات المجموعات - Collections)
             }
-        })
+        });
     </script>
 </body>
 </html>
