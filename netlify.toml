@@ -1,20 +1,10 @@
-[build]
-  publish = "/"
-  base = "."
+# netlify.toml
 
-# توجيهات CMS الأساسية (لحل مشكلة /admin/ 404)
+[build]
+  publish = "/" # النشر من المجلد الرئيسي
+  base = "." # البناء من المجلد الرئيسي
+
 [[redirects]]
   from = "/admin/*"
   to = "/admin/index.html"
-  status = 200
-
-# توجيهات Netlify Identity (لحل مشكلة رابط الدعوة/إعادة التعيين)
-[[redirects]]
-  from = "/.netlify/identity"
-  to = "/index.html"
-  status = 200
-
-[[redirects]]
-  from = "/.netlify/identity/*"
-  to = "/index.html"
   status = 200
