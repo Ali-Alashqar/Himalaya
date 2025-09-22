@@ -1,0 +1,10 @@
+# netlify.toml
+
+[build]
+  publish = "/" # النشر من المجلد الرئيسي
+  base = "." # البناء من المجلد الرئيسي
+
+[[redirects]]
+  from = "/admin/*"
+  to = "/admin/index.html"
+  status = 200
