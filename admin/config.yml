@@ -1,0 +1,22 @@
+backend:
+  name: git-gateway 
+  branch: main # تأكد من اسم الفرع لديك
+
+publish_mode: editorial_workflow
+media_folder: "images" 
+public_folder: "/images" 
+
+collections:
+  - name: "products"
+    label: "إدارة المنتجات"
+    folder: "products.json" 
+    create: true
+    delete: true
+    format: "json"
+    extension: "json"
+    fields:
+      - {label: "ID (يجب أن يكون فريداً)", name: "id", widget: "number", value: 100, required: true, min: 1, step: 1}
+      - {label: "اسم المنتج", name: "name", widget: "string", required: true}
+      - {label: "السعر (بالأرقام فقط)", name: "price", widget: "number", required: true, step: 0.01}
+      - {label: "التصنيف", name: "category", widget: "select", options: ["منظفات منزلية", "منظفات صحية", "معقمات", "أدوات تنظيف", "عطور ومعطرات جو"]}
+      - {label: "مسار الصورة (مسار ملف في مجلد images)", name: "image", widget: "string", required: false}
